@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraController02 : MonoBehaviour
 {
     public vThirdPersonCamera _vThirdPersonCamera;
-    public float zoomSpeed = 5;
     private readonly float MAX_DISTANCE = 9;
     private readonly float MIN_DISTANCE = 2;
     // Start is called before the first frame update
