@@ -7,16 +7,19 @@ using UnityEngine.AI;
 public class PlayerMove : MonoBehaviour
 {
     private NavMeshAgent playerAgent;
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         playerAgent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        SwitchAnimation();
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -38,5 +41,11 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
+    }
+
+    // move animator
+    private void SwitchAnimation()
+    {
+        anim.SetFloat("Speed", playerAgent.velocity.sqrMagnitude);
     }
 }
