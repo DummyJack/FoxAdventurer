@@ -11,33 +11,39 @@ public class Interactor : MonoBehaviour
     [SerializeField] private HintUI _hintUI;
 
     private readonly Collider[] _colliders = new Collider[3];
-    
+
     // [SerializeField] private int _numFound;
     private int _numFound;
 
     private IInteractable _interactable;
 
-    private void Update() {
+    private void Update()
+    {
         _numFound = Physics.OverlapSphereNonAlloc(_interactionPoint.position, _interactionPointRadius, _colliders, _interactableMask);
 
-        if (_numFound > 0) {
+        if (_numFound > 0)
+        {
             _interactable = GetClosestCollider().GetComponent<IInteractable>();
             // _interactable = _colliders[0].GetComponent<IInteractable>();
-            
-            if (_interactable != null) {
+
+            if (_interactable != null)
+            {
                 // if (!_hintUI.IsDisplayed) 
                 _hintUI.SetUp(_interactable.InteractionPrompt);
 
                 if (Keyboard.current.eKey.wasPressedThisFrame) _interactable.Interact(this);
             }
-            
-        } else {
+
+        }
+        else
+        {
             if (_interactable != null) _interactable = null;
             if (_hintUI.IsDisplayed) _hintUI.Close();
         }
     }
 
-    private void OnDrawGizmos() {
+    private void OnDrawGizmos()
+    {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_interactionPoint.position, _interactionPointRadius);
     }

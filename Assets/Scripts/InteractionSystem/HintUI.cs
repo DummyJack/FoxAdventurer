@@ -7,24 +7,40 @@ using UnityEngine.UI;
 public class HintUI : MonoBehaviour
 {
     [SerializeField] private GameObject _uiPanel;
+    [SerializeField] private GameObject DialogueUI;
     [SerializeField] private TextMeshProUGUI _promptText;
 
-    private void Start() {
+    public Camera playerCamera;
+
+    private void Start()
+    {
         _uiPanel.SetActive(false);
     }
 
-    private void Update() {
-
+    private void Update()
+    {
     }
 
     public bool IsDisplayed = false;
-    public void SetUp(string promptText) {
-        _promptText.text = promptText;
-        _uiPanel.SetActive(true);
-        IsDisplayed = true;
+    public void SetUp(string promptText)
+    {
+
+        if (DialogueUI.activeInHierarchy)
+        {
+            _uiPanel.SetActive(false);
+            IsDisplayed = false;
+        }
+        else
+        {
+            _promptText.text = promptText;
+            _uiPanel.SetActive(true);
+            IsDisplayed = true;
+        }
+
     }
 
-    public void Close() {
+    public void Close()
+    {
         _uiPanel.SetActive(false);
         IsDisplayed = false;
     }

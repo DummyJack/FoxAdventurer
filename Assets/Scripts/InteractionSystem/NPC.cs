@@ -8,9 +8,12 @@ public class NPC : MonoBehaviour, IInteractable
 
     public string InteractionPrompt => _prompt;
 
+    public string name;
+    public string[] contentList;
+
     public bool Interact(Interactor interactor)
     {
-        Debug.Log("Interact with NPC");
+        DialogueUI.Instance.Show(name, contentList);
         return true;
     }
 }
