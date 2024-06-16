@@ -8,6 +8,7 @@ public class CameraController03 : MonoBehaviour
     private readonly float MAX_DISTANCE = 4;
     private readonly float MIN_DISTANCE = 2;
     [SerializeField] private GameObject DialogueUI;
+    [SerializeField] private GameObject GameOverUI;
 
     // Start is called before the first frame update
     void Start()
@@ -20,10 +21,9 @@ public class CameraController03 : MonoBehaviour
     {
         _vThirdPersonCamera.lockCamera = false;
 
-        if (DialogueUI.activeInHierarchy)
-        {
-            _vThirdPersonCamera.lockCamera = true;
-        }
+        if (DialogueUI.activeInHierarchy | GameOverUI.activeInHierarchy) _vThirdPersonCamera.lockCamera = true;
+
+
 
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         // print(scroll);

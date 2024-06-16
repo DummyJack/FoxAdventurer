@@ -8,6 +8,7 @@ public class HintUI : MonoBehaviour
 {
     [SerializeField] private GameObject _uiPanel;
     [SerializeField] private GameObject DialogueUI;
+    [SerializeField] private GameObject GameOverUI;
     [SerializeField] private TextMeshProUGUI _promptText;
 
     public Camera playerCamera;
@@ -25,7 +26,7 @@ public class HintUI : MonoBehaviour
     public void SetUp(string promptText)
     {
 
-        if (DialogueUI.activeInHierarchy)
+        if (DialogueUI.activeInHierarchy | GameOverUI.activeInHierarchy)
         {
             _uiPanel.SetActive(false);
             IsDisplayed = false;
