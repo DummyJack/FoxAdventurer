@@ -7,7 +7,8 @@ public class CameraController01 : MonoBehaviour
     public float zoomSpeed = 5;
 
     private Vector3 offset;
-    private Transform playerTransform;
+    public Transform playerTransform;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class CameraController01 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         transform.position = playerTransform.position + offset;
 
         float scroll = Input.GetAxis("Mouse ScrollWheel");
@@ -26,4 +28,5 @@ public class CameraController01 : MonoBehaviour
 
         Camera.main.fieldOfView = Mathf.Clamp(Camera.main.fieldOfView, 50, 70);
     }
+
 }
