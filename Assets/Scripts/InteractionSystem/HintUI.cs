@@ -7,17 +7,14 @@ using UnityEngine.UI;
 public class HintUI : MonoBehaviour
 {
     [SerializeField] private GameObject _uiPanel;
-    // [SerializeField] private GameObject DialogueUI;
-    // [SerializeField] private GameObject GameOverUI;
+    [SerializeField] private GameObject DialogueUI;
+    [SerializeField] private GameObject GameOverUI;
     [SerializeField] private TextMeshProUGUI _promptText;
-    private GameObject DialogueUI;
-    private GameObject GameOverUI;
+
 
     private void Start()
     {
         _uiPanel.SetActive(false);
-        DialogueUI = GameObject.Find("DialogueUI");
-        GameOverUI = GameObject.Find("GameOverUI");
     }
 
     private void Update()

@@ -21,7 +21,7 @@ public class StartGame : MonoBehaviour
     public void OnEndClick()
     {
         Application.Quit();
-        EditorApplication.isPlaying = false;
+        // EditorApplication.isPlaying = false;
     }
 
     public void OnTurtorialClick()
