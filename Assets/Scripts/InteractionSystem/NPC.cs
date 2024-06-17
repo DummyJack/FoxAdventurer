@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Unity.VisualScripting;
+using UnityEngine.Analytics;
 
 public class NPC : MonoBehaviour, IInteractable
 {
@@ -18,7 +20,11 @@ public class NPC : MonoBehaviour, IInteractable
         {
             GameOverUI.Instance.Show();
         }
-        DialogueUI.Instance.Show(name, contentList);
+        else
+        {
+            DialogueUI.Instance.Show(name, contentList);
+        }
         return true;
+
     }
 }

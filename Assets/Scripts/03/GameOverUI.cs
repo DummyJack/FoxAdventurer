@@ -23,10 +23,6 @@ public class GameOverUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Restart = transform.Find("Restart").GetComponent<Button>();
-        Restart.onClick.AddListener(this.OnRestartClick);
-        BackToMenu = transform.Find("BackToMenu").GetComponent<Button>();
-        BackToMenu.onClick.AddListener(this.OnBackToMenuClick);
         Hide();
     }
 
@@ -41,12 +37,12 @@ public class GameOverUI : MonoBehaviour
     }
 
 
-    private void OnRestartClick()
+    public void OnRestartClick()
     {
         SceneManager.LoadScene(3);
     }
 
-    private void OnBackToMenuClick()
+    public void OnBackToMenuClick()
     {
         SceneManager.LoadScene(0);
     }
