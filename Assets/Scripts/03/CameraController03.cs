@@ -7,13 +7,14 @@ public class CameraController03 : MonoBehaviour
     public vThirdPersonCamera _vThirdPersonCamera;
     private readonly float MAX_DISTANCE = 4;
     private readonly float MIN_DISTANCE = 2;
-    [SerializeField] private GameObject DialogueUI;
-    [SerializeField] private GameObject GameOverUI;
+    private GameObject DialogueUI;
+    private GameObject GameOverUI;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        DialogueUI = GameObject.Find("Player/Canvas/DialogueUI");
+        GameOverUI = GameObject.Find("Player/Canvas/GameOverUI");
     }
 
     // Update is called once per frame
