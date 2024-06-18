@@ -3311,6 +3311,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1315622628}
   m_CullTransparentMesh: 1
+--- !u!1 &1328608048 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6571395345039005700, guid: aec6bfb80208f744abfc66d9eb83211a, type: 3}
+  m_PrefabInstance: {fileID: 1003517251302502038}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1328608059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328608048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a66af5f4ace685469f19a9e0a648c89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueUI: {fileID: 1603553063}
+  GameOverUI: {fileID: 572633959}
 --- !u!1 &1407456702
 GameObject:
   m_ObjectHideFlags: 0
@@ -4878,12 +4897,20 @@ PrefabInstance:
       value: 41.7
       objectReference: {fileID: 0}
     - target: {fileID: 3844129610313211575, guid: aec6bfb80208f744abfc66d9eb83211a, type: 3}
+      propertyPath: locomotionType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3844129610313211575, guid: aec6bfb80208f744abfc66d9eb83211a, type: 3}
       propertyPath: groundMaxDistance
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3844129610313211575, guid: aec6bfb80208f744abfc66d9eb83211a, type: 3}
       propertyPath: groundLayer.m_Bits
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672397025009545884, guid: aec6bfb80208f744abfc66d9eb83211a, type: 3}
+      propertyPath: strafeInput
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5617228375292025302, guid: aec6bfb80208f744abfc66d9eb83211a, type: 3}
       propertyPath: m_Bones.Array.data[62]
@@ -4969,6 +4996,9 @@ PrefabInstance:
       insertIndex: 1
       addedObject: {fileID: 572633960}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6571395345039005700, guid: aec6bfb80208f744abfc66d9eb83211a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1328608059}
     - targetCorrespondingSourceObject: {fileID: 2152411733081141276, guid: aec6bfb80208f744abfc66d9eb83211a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1567412041}

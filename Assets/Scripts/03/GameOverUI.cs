@@ -28,6 +28,7 @@ public class GameOverUI : MonoBehaviour
 
     public void Show()
     {
+        Cursor.visible = true;
         gameObject.SetActive(true);
     }
 

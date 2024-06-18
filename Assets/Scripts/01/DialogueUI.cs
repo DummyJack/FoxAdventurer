@@ -49,6 +49,7 @@ public class DialogueUI : MonoBehaviour
         contentIndex = 0;
         contentText.text = contentList[0];
         gameObject.SetActive(true);
+        Cursor.visible = true;
     }
 
     public void Hide()

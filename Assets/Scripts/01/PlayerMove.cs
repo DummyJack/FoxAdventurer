@@ -9,6 +9,8 @@ public class PlayerMove : MonoBehaviour
     private NavMeshAgent playerAgent;
     private Animator anim;
 
+    public Texture2D point, dialogue, teleport;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,16 +30,27 @@ public class PlayerMove : MonoBehaviour
             bool isCollide = Physics.Raycast(ray, out hit);
             if (isCollide)
             {
+                switch (hit.collider.gameObject.tag)
+                {
+                    case "Ground":
+                        Cursor.SetCursor(point, new Vector2(16, 16), CursorMode.Auto);
+                        break;
+                    case "Interactable":
+                        Cursor.SetCursor(dialogue, new Vector2(16, 16), CursorMode.Auto);
+                        break;
+                    case "Teleport":
+                        Cursor.visible = false;
+                        break;
+                }
                 if (hit.collider.tag == "Ground")
                 {
                     playerAgent.stoppingDistance = 0;
                     playerAgent.SetDestination(hit.point);
                 }
-                else if (hit.collider.tag == "Interactable")
+                else if (hit.collider.tag == "Interactable" || hit.collider.tag == "Teleport")
                 {
                     hit.collider.GetComponent<InteractableObject>().OnClick(playerAgent);
                 }
-
             }
         }
 

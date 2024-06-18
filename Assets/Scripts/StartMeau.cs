@@ -11,6 +11,7 @@ public class StartGame : MonoBehaviour
     void Start()
     {
         turtorialPanel.SetActive(false);
+        Cursor.visible = true;
     }
 
     public void OnStartClick()
