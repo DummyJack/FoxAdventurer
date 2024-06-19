@@ -4964,6 +4964,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7677482657011867961, guid: aec6bfb80208f744abfc66d9eb83211a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b0520ed94525295438584617d98a49d8, type: 2}
     - target: {fileID: 8808320418359575099, guid: aec6bfb80208f744abfc66d9eb83211a, type: 3}
       propertyPath: DialogueUI
       value: 

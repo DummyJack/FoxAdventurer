@@ -12,6 +12,7 @@ public class HideCursor : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -20,10 +21,12 @@ public class HideCursor : MonoBehaviour
         if (DialogueUI.activeInHierarchy | GameOverUI.activeInHierarchy)
         {
             Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
         }
         else
         {
             Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
     }

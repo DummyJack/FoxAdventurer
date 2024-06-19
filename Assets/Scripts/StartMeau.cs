@@ -12,6 +12,7 @@ public class StartGame : MonoBehaviour
     {
         turtorialPanel.SetActive(false);
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void OnStartClick()

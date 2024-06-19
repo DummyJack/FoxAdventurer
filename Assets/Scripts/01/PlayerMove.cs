@@ -39,7 +39,7 @@ public class PlayerMove : MonoBehaviour
                         Cursor.SetCursor(dialogue, new Vector2(16, 16), CursorMode.Auto);
                         break;
                     case "Teleport":
-                        Cursor.visible = false;
+                        Cursor.SetCursor(teleport, new Vector2(16, 16), CursorMode.Auto);
                         break;
                 }
                 if (hit.collider.tag == "Ground")
